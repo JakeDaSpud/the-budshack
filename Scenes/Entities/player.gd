@@ -8,6 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	_handle_pause();
+	_handle_interact();
 	_handle_movement(delta);
 
 func _input(event):
@@ -20,7 +21,7 @@ func _handle_movement(delta : float):
 	var input_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Back");
 	
 	if (input_dir != Vector2.ZERO):
-		var direction = $Camera3D.transform.FORWARD + Vector3(input_dir.x, 0, input_dir.y).normalized();
+		var direction = self.transform.basis * Vector3(input_dir.x, 0, input_dir.y).normalized();
 		
 		velocity = direction * _SPEED;
 		
@@ -30,3 +31,7 @@ func _handle_pause():
 	if (Input.is_action_pressed("Pause")):
 		print_debug("Quitting");
 		get_tree().quit();
+
+func _handle_interact():
+	if (Input.is_action_just_pressed("Interact")):
+		print_debug("Interact Pressed");
