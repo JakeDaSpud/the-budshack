@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv0hmpx62pmim"]
+
+[ext_resource type="PackedScene" uid="uid://dxt67peh04g4q" path="res://Scenes/Entities/Player.tscn" id="1_lra4e"]
+
+[node name="DemoShop" type="Node3D"]
+
+[node name="demoFloors" type="Node3D" parent="."]
+
+[node name="floorShop" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.5, -5)
+size = Vector3(9, 1, 10)
+
+[node name="floorGH1" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -0.5, -19)
+size = Vector3(9, 1, 10)
+
+[node name="floorGH2" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, -0.5, -19)
+size = Vector3(9, 1, 10)
+
+[node name="floorHall" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.5, -15.5)
+size = Vector3(4, 1, 11)
+
+[node name="floorMaker" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.5, -16)
+size = Vector3(5, 1, 8)
+
+[node name="floorMakerDoor" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -14.5)
+size = Vector3(1, 1, 3)
+
+[node name="floorGHDoor" type="CSGBox3D" parent="demoFloors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.5, -18.5)
+size = Vector3(2, 1, 3)
+
+[node name="Player" parent="." instance=ExtResource("1_lra4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33261, 0, -2.4184)
