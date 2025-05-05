@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bv0hmpx62pmim"]
+[gd_scene load_steps=18 format=3 uid="uid://bv0hmpx62pmim"]
 
 [ext_resource type="PackedScene" uid="uid://dxt67peh04g4q" path="res://Scenes/Entities/Player.tscn" id="1_lra4e"]
+[ext_resource type="PackedScene" uid="uid://c3r4s0hqcy53r" path="res://Scenes/Entities/FlowerPot.tscn" id="1_u2a08"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lra4e"]
 albedo_color = Color(0.957109, 0.764215, 0.494263, 1)
@@ -133,10 +134,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.5, -22)
 material_override = SubResource("StandardMaterial3D_stba4")
 size = Vector3(2, 1, 6)
 
-[node name="shop desk2" type="CSGBox3D" parent="demoFloors/garden01"]
+[node name="PlanterTable" type="CSGBox3D" parent="demoFloors/garden01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5785, 0.201172, -25.1103)
 material_override = SubResource("StandardMaterial3D_u2a08")
 size = Vector3(4, 0.597656, 1)
+
+[node name="FlowerPot" parent="demoFloors/garden01/PlanterTable" instance=ExtResource("1_u2a08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.4, 0)
+
+[node name="FlowerPot2" parent="demoFloors/garden01/PlanterTable" instance=ExtResource("1_u2a08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.4, 0)
+
+[node name="FlowerPot3" parent="demoFloors/garden01/PlanterTable" instance=ExtResource("1_u2a08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.4, 0)
+
+[node name="FlowerPot4" parent="demoFloors/garden01/PlanterTable" instance=ExtResource("1_u2a08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.4, 0)
+
+[node name="FlowerPot5" parent="demoFloors/garden01/PlanterTable" instance=ExtResource("1_u2a08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.4, 0)
+
+[node name="FlowerPot6" parent="demoFloors/garden01/PlanterTable" instance=ExtResource("1_u2a08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.4, 0)
 
 [node name="shop desk3" type="CSGBox3D" parent="demoFloors/garden01"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5785, 0.201172, -22.1103)

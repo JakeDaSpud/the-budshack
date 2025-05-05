@@ -1,15 +1,6 @@
 extends Resource
 class_name Flower
 
-## Seasons Enum
-enum SEASONS {
-	UNASSIGNED = 0,
-	SPRING = 1,
-	SUMMER = 2,
-	AUTUMN = 3,
-	WINTER = 4
-};
-
 ## Flower Rarity Enum
 enum FLOWER_RARITY {
 	LOW = 0,
@@ -59,17 +50,17 @@ var current_growth : int = 0;
 @export var watered_today : bool = false;
 
 ## What Season the Flower belongs to
-@export var season : SEASONS = SEASONS.UNASSIGNED;
+@export var season : GAME.SEASONS = GAME.SEASONS.UNASSIGNED;
 
 # Head and Stem Models
-@export var head_model : Mesh;
-@export var stem_model : Mesh;
+@export var head_model : PackedScene;
+@export var stem_model : PackedScene;
 
 ## What Colours the Flower's Petal Model can be (naturally)
-@export var natural_colours : Array[Color] = [COLOURS.UNASSIGNED];
+@export var natural_colours : Array[String] = ["UNASSIGNED"];
 
 ## Colour of the Stem Model
-@export var stem_colour : Color = COLOURS.UNASSIGNED;
+@export var stem_colour : String = "UNASSIGNED";
 
 # ---------- FUNCTIONS ----------
 
@@ -94,8 +85,5 @@ func grow(days_to_progress : int = 1) -> void:
 		# Reset current_growth for the next growth_stage
 		current_growth = 0;
 
-func set_head_colour(new_colour : Color) -> void:
-	head_model.mesh.material.albedo_color = new_colour;
-
-func set_stem_colour(new_colour : Color) -> void:
-	stem_model.mesh.material.albedo_color = new_colour;
+func get_colour_from_name(name : String) -> Color:
+	return COLOURS.get(name);

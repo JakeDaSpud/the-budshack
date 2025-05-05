@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Flower" load_steps=4 format=3 uid="uid://4vecata3vwbc"]
+
+[ext_resource type="PackedScene" uid="uid://ro7yyfeiwwo6" path="res://Assets/Meshes/Proto/flower_head_proto.tscn" id="1_jlw04"]
+[ext_resource type="Script" uid="uid://cr3bpvakt2csj" path="res://Scripts/flower.gd" id="1_mpbth"]
+[ext_resource type="PackedScene" uid="uid://dy4otvrbth4k6" path="res://Assets/Meshes/Proto/flower_stem_proto.tscn" id="3_ia1go"]
+
+[resource]
+script = ExtResource("1_mpbth")
+name = "Dandelion"
+value = 5.0
+growth_stage = 0
+growth_interval_days = 1
+watered_today = false
+season = 1
+head_model = ExtResource("1_jlw04")
+stem_model = ExtResource("3_ia1go")
+natural_colours = Array[String](["YELLOW", "WHITE"])
+stem_colour = "GREEN"
+metadata/_custom_type_script = "uid://cr3bpvakt2csj"
